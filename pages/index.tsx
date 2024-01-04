@@ -4,6 +4,7 @@ import DashboardLayout from '@/components/DashboardLayout'
 import { TableDash } from '@/components/TableDash'
 import Login from './login'
 import { useState } from 'react'
+import AuthProvider from '@/Provider/AuthProvider'
 
 
 
@@ -20,6 +21,7 @@ const tableDB = [
 export default function Home() {
   
   return (
+    <AuthProvider>
    <div className='relative'>
     <Login/>
       <DashboardLayout >
@@ -31,6 +33,6 @@ export default function Home() {
     </div>
    </DashboardLayout>
    </div>
-  
+   </AuthProvider>
   )
 }
