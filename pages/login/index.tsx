@@ -42,12 +42,12 @@ const Login: React.FC<LoginProps> = () => {
     return ( 
       
         <div className={cn(
-          close?"flex fixed top-[-600px] left-0 z-0 w-screen h-screen justify-center items-center bg-yellow-300":
-          "flex fixed top-0 left-0 z-50 w-screen h-screen justify-center items-center bg-yellow-300"
+          close?"flex fixed top-[-600px] left-0 z-0 w-screen h-screen justify-center items-center bg-red-500":
+          "flex fixed top-0 left-0 z-50 w-screen h-screen justify-center items-center bg-red-500"
         )}>
         
           <div className="flex flex-col gap-5">
-          <h1 className="font-bold">Login</h1>
+          <h1 className="font-bold text-2xl text-white text-center">BrightStars board</h1>
             <Input type="text" placeholder="UserName" className="w-[300px]" onChange={(e)=>setUserName(e.target.value)}/>
             <p>{errorUserName}</p>
             <Input type="email" placeholder="Email" className="w-[300px]" onChange={(e)=>setEmail(e.target.value)}/>
@@ -57,7 +57,7 @@ const Login: React.FC<LoginProps> = () => {
             <Input type="password" placeholder="Comfirm Password" className="w-[300px]" onChange={(e)=>setConfirmPassword(e.target.value)}/>
             <p>{errorConfirmPw}</p>
             <Button asChild 
-            className={cn("bg-red-500",
+            className={cn("bg-yellow-400 font-bold text-lg",
              
             )} onClick={validate}>
               <Link href="/login">Login</Link>
