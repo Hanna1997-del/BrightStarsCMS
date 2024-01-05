@@ -26,7 +26,7 @@ const Login: React.FC<LoginProps> = () => {
     const validate = (e:any) => {
       e.preventDefault();
       userName.length > 8 ? setErrorUserName("")   : setErrorUserName("username must be 8")
-      userName.length > 8 ? setClose(true)   : setClose(false)
+      userName.length > 8 ? setClose(true) : setClose(false)
       email.includes ("@gmail.com") ? setErrorEmail("") : setErrorEmail("please type email")
       email.includes ("@gmail.com") ? setClose(true) : setClose(false)
       password.length >8 ? setErrorPassword("") : setErrorPassword("password must be 8")
@@ -42,7 +42,7 @@ const Login: React.FC<LoginProps> = () => {
     return ( 
       
         <div className={cn(
-          close?"flex fixed top-[-600px] left-0 z-0 w-screen h-screen justify-center items-center bg-red-500":
+          close?"flex fixed top-[-600px] left-0 z-10 w-screen h-screen justify-center items-center bg-red-500":
           "flex fixed top-0 left-0 z-50 w-screen h-screen justify-center items-center bg-red-500"
         )}>
         

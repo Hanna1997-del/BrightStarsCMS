@@ -8,7 +8,7 @@ interface AuthProviderProps {
     setClose: Dispatch<SetStateAction<boolean>>
  })
 const AuthProvider: React.FC<AuthProviderProps> = ({children}) => {
-    const[close,setClose] = useState(false)
+    const[close,setClose] = useState(false);
     return ( 
         <AuthContext.Provider value={{close,setClose}}>
             {children}

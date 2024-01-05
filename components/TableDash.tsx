@@ -211,7 +211,7 @@ export function TableDash() {
   })
 
   return (
-    <div className="w-full">
+    <div className="w-[900px] ml-10">
       <div className="flex items-center py-4">
         <Input
           placeholder="Filter emails..."

@@ -16,10 +16,10 @@ const links = [
 const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
   return (
     <main className="w-[1380px] overflow-y-scroll overflow-x-hidden h-screen flex  relative">
-      <div className="w-[20%] h-full fixed border font-bold border-r-4  border-r-red-400 shadow-2xl mt-2 flex flex-col pl-3 gap-16 pt-20 text-xl  bg-yellow-300 ">
+      <div className="w-[20%] h-full fixed border font-bold border-r-4  border-r-yellow-400 shadow-2xl mt-5 flex flex-col pl-3 gap-16 pt-20 text-xl  bg-red-500 ">
         {links.map((item)=>(
             <Link 
-            className="flex w-full hover:bg-red-500 hover:text-white py-2   "
+            className="flex w-[200px] text-white hover:bg-yellow-300 rounded-lg justify-center hover:text-black py-2   "
             href={item.url} key={item.title}>
                 {item.title}
             </Link>
