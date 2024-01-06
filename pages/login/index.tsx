@@ -21,18 +21,18 @@ const Login: React.FC<LoginProps> = () => {
   const[errorPassword,setErrorPassword] = useState("")
   const[errorConfirmPw,setErrorConfirmPw] = useState("")
 
-  const{close,setClose} = useContext(AuthContext)
+  const{login,setLogin} = useContext(AuthContext)
 
     const validate = (e:any) => {
       e.preventDefault();
       userName.length > 8 ? setErrorUserName("")   : setErrorUserName("username must be 8")
-      userName.length > 8 ? setClose(true) : setClose(false)
+      userName.length > 8 ? setLogin(true) : setLogin(false)
       email.includes ("@gmail.com") ? setErrorEmail("") : setErrorEmail("please type email")
-      email.includes ("@gmail.com") ? setClose(true) : setClose(false)
+      email.includes ("@gmail.com") ? setLogin(true) : setLogin(false)
       password.length >8 ? setErrorPassword("") : setErrorPassword("password must be 8")
-      password.length >8 ? setClose(true) : setClose(false)
+      password.length >8 ? setLogin(true) : setLogin(false)
       password !="" && password==confirmPassword? setErrorConfirmPw("") : setErrorConfirmPw("Password did not match")
-      password !="" && password==confirmPassword? setClose(true) : setClose(false)
+      password !="" && password==confirmPassword? setLogin(true) : setLogin(false)
     }
     
     useEffect(()=>{
@@ -42,7 +42,7 @@ const Login: React.FC<LoginProps> = () => {
     return ( 
       
         <div className={cn(
-          close?"flex fixed top-[-600px] left-0 z-10 w-screen h-screen justify-center items-center bg-red-500":
+          login?"flex fixed top-[-650px] left-0 z-10 w-screen h-screen justify-center items-center bg-red-500":
           "flex fixed top-0 left-0 z-50 w-screen h-screen justify-center items-center bg-red-500"
         )}>
         
