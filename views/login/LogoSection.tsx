@@ -8,7 +8,7 @@ const LogoSection: React.FC<LogoSectionProps> = () => {
     <div
       className={cn(
         "w-full h-screen bg-primary",
-        "flex justify-center items-center"
+        "flex justify-center items-center",
       )}
     >
       <div className="flex-column items-center w-max h-max gap-3">
