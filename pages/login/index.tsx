@@ -1,71 +1,16 @@
-import { AuthContext } from "@/Provider/AuthProvider";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
-import { useContext, useEffect, useState } from "react";
+import LoginForm from "@/views/login/LoginForm";
+import LogoSection from "@/views/login/LogoSection";
 
-interface LoginProps {
-    
-}
- 
+interface LoginProps {}
+
 const Login: React.FC<LoginProps> = () => {
- 
-  const[userName,setUserName] = useState("")
-  const[email,setEmail] = useState("")
-  const[password,setPassword] = useState("")
-  const[confirmPassword,setConfirmPassword] = useState("")
+  return (
+    <div className={cn("grid grid-cols-2", "w-screen h-screen bg-gray")}>
+      <LogoSection />
+      <LoginForm />
+    </div>
+  );
+};
 
-  const[errorUserName,setErrorUserName] = useState("")
-  const[errorEmail,setErrorEmail] = useState("")
-  const[errorPassword,setErrorPassword] = useState("")
-  const[errorConfirmPw,setErrorConfirmPw] = useState("")
-
-  const{login,setLogin} = useContext(AuthContext)
-
-    const validate = (e:any) => {
-      e.preventDefault();
-      userName.length > 8 ? setErrorUserName("")   : setErrorUserName("username must be 8")
-      userName.length > 8 ? setLogin(true) : setLogin(false)
-      email.includes ("@gmail.com") ? setErrorEmail("") : setErrorEmail("please type email")
-      email.includes ("@gmail.com") ? setLogin(true) : setLogin(false)
-      password.length >8 ? setErrorPassword("") : setErrorPassword("password must be 8")
-      password.length >8 ? setLogin(true) : setLogin(false)
-      password !="" && password==confirmPassword? setErrorConfirmPw("") : setErrorConfirmPw("Password did not match")
-      password !="" && password==confirmPassword? setLogin(true) : setLogin(false)
-    }
-    
-    useEffect(()=>{
-      
-    },[])
-   
-    return ( 
-      
-        <div className={cn(
-          login?"flex fixed top-[-650px] left-0 z-10 w-screen h-screen justify-center items-center bg-red-500":
-          "flex fixed top-0 left-0 z-50 w-screen h-screen justify-center items-center bg-red-500"
-        )}>
-        
-          <div className="flex flex-col gap-5">
-          <h1 className="font-bold text-2xl text-white text-center">BrightStars board</h1>
-            <Input type="text" placeholder="UserName" className="w-[300px]" onChange={(e)=>setUserName(e.target.value)}/>
-            <p>{errorUserName}</p>
-            <Input type="email" placeholder="Email" className="w-[300px]" onChange={(e)=>setEmail(e.target.value)}/>
-            <p>{errorEmail}</p>
-            <Input type="password" placeholder="Password" className="w-[300px]" onChange={(e)=>setPassword(e.target.value)}/>
-            <p>{errorPassword}</p>
-            <Input type="password" placeholder="Comfirm Password" className="w-[300px]" onChange={(e)=>setConfirmPassword(e.target.value)}/>
-            <p>{errorConfirmPw}</p>
-            <Button asChild 
-            className={cn("bg-yellow-400 font-bold text-lg",
-             
-            )} onClick={validate}>
-              <Link href="/login">Login</Link>
-            </Button>
-          </div>
-           
-        </div>
-     );
-}
- 
 export default Login;
