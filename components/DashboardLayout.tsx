@@ -12,11 +12,12 @@ const links = [
   { title: "Mark", url: "/mark" },
   { title: "Setting", url: "/setting" },
  
+ 
 ];
 const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
   return (
-    <main className="min-w-[1350px]   h-screen flex  relative">
-      <div className="w-[20%] h-full  fixed border font-bold border-r-4  border-r-yellow-400 shadow-2xl mt-0 flex flex-col pl-3 gap-16 pt-20 text-xl  bg-red-500 ">
+    <main className="min-w-[1350px]  h-screen flex  relative">
+      <div className="w-[20%] h-full    fixed border font-bold border-r-4 overflow-y-scroll  shadow-3xl mt-0 flex flex-col pl-3 gap-16 pt-20 text-xl  bg-red-500 ">
         {links.map((item)=>(
             <Link 
             className="flex w-[200px] text-white hover:bg-yellow-300 rounded-lg justify-center hover:text-black py-2   "

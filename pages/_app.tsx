@@ -6,7 +6,7 @@ import Home from ".";
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <AuthProvider>
-      <Home/>
+     
       <Component {...pageProps} />
     </AuthProvider>
   );

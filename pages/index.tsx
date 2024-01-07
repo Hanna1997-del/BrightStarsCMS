@@ -22,7 +22,7 @@ export default function Home() {
   
   return (
     
-   <div className='relative max-w-[1380px] '>
+   <div className='relative max-w-[1380px]  '>
     <Login/>
       <DashboardLayout >
     <div className='absolute  top-[200px] w-[800px] h-full left-[350px]'>
